@@ -1,137 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Анимированное солнце</title>
-<style>
-    body, html {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #f0f0f0;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Всегда ваш, Pechora-PRO</title>
 
-    .sun {
-        width: 150px;
-        height: 150px;
-        position: relative;
-        animation: rotateSun 4s linear infinite;
-    }
-
-    .sun::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-color: #ffdb58; /* желтый */
-    }
-
-    .sun::after {
-        content: '';
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        width: 70%;
-        height: 70%;
-        border-radius: 50%;
-        background-color: #fffc96; /* светло-желтый */
-    }
-
-    .ray {
-        position: absolute;
-        width: 2px;
-        height: 40px;
-        background-color: #ffdb58; /* желтый */
-        top: 5px;
-        left: calc(50% - 1px);
-        transform-origin: center bottom;
-        animation: rayAnimation 2s infinite linear;
-    }
-
-    .ray:nth-child(2) {
-        transform: rotate(30deg);
-    }
-
-    .ray:nth-child(3) {
-        transform: rotate(60deg);
-    }
-
-    .ray:nth-child(4) {
-        transform: rotate(90deg);
-    }
-
-    .ray:nth-child(5) {
-        transform: rotate(120deg);
-    }
-
-    .ray:nth-child(6) {
-        transform: rotate(150deg);
-    }
-
-    .ray:nth-child(7) {
-        transform: rotate(180deg);
-    }
-
-    .ray:nth-child(8) {
-        transform: rotate(210deg);
-    }
-
-    .ray:nth-child(9) {
-        transform: rotate(240deg);
-    }
-
-    .ray:nth-child(10) {
-        transform: rotate(270deg);
-    }
-
-    .ray:nth-child(11) {
-        transform: rotate(300deg);
-    }
-
-    .ray:nth-child(12) {
-        transform: rotate(330deg);
-    }
-
-    @keyframes rotateSun {
-        0% {
-            transform: rotate(0deg);
+    <style>
+        /* Стили для центрирования элемента */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0; /* Добавил фон, чтобы было нагляднее */
         }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
 
-    @keyframes rayAnimation {
-        0% {
-            transform: scaleY(0);
+        /* Стили для сердца */
+        .heart:before,
+        .heart:after {
+            background: rgb(153, 0, 0);
+            content: "";
+            width: 200px;
+            height: 340px;
+            position: absolute;
+            border-radius: 100px 100px 0 0;
         }
-        50% {
-            transform: scaleY(1);
+
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
         }
-        100% {
-            transform: scaleY(0);
+
+        .heart:before {
+            left: 200px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
         }
-    }
-</style>
+
+        /* Анимация сердца */
+        .heart {
+            animation-name: love;
+            animation-duration: 500ms;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-out;
+        }
+
+        @keyframes love {
+            from {
+                transform: scale(0.9);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div class="sun">
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-    </div>
+    <div class="heart"></div>
 </body>
+
 </html>
