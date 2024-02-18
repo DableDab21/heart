@@ -19,6 +19,12 @@
         }
 
         /* Стили для сердца */
+        .heart {
+            position: relative;
+            width: 200px;
+            height: 340px;
+        }
+
         .heart:before,
         .heart:after {
             background: rgb(153, 0, 0);
@@ -30,15 +36,15 @@
         }
 
         .heart:after {
-            left: 0;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
+            left: 50%;
+            transform: translateX(-100%) rotate(45deg);
+            transform-origin: right bottom;
         }
 
         .heart:before {
-            left: 200px;
-            transform: rotate(-45deg);
-            transform-origin: 0 100%;
+            left: 50%;
+            transform: translateX(0) rotate(-45deg);
+            transform-origin: left bottom;
         }
 
         /* Анимация сердца */
